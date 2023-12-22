@@ -1,0 +1,12 @@
+version: '1.0'
+services:
+    pcl-bag-to-pcd:
+        build:
+            context: ./
+            dockerfile: docker/Dockerfile
+        volumes:
+            - /dev:/dev
+            - ./bag:/app/bag
+            - ./pcd:/app/pcd
+        command: >
+            ros2 run pcl_bag_to_pcd pcl_bag_to_pcd /app/bag ${TOPIC_NAME}
