@@ -1,4 +1,4 @@
-ARG ROS_DISTRO=humble
+ARG ROS_DISTRO=iron
 FROM osrf/ros:$ROS_DISTRO-desktop
 
 SHELL ["/bin/bash", "-c"]
