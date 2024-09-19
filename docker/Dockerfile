@@ -1,4 +1,4 @@
-ARG ROS_DISTRO=iron
+ARG ROS_DISTRO=jazzy
 FROM osrf/ros:$ROS_DISTRO-desktop
 
 SHELL ["/bin/bash", "-c"]
@@ -14,6 +14,7 @@ ARG USERNAME=ros
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
+RUN userdel $(getent passwd 1000 | cut -d: -f1)
 RUN groupadd --gid $USER_GID $USERNAME \
   && useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME \
   && mkdir /home/$USERNAME/.config && chown $USER_UID:$USER_GID /home/$USERNAME/.config
