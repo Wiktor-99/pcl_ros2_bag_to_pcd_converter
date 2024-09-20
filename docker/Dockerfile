@@ -1,5 +1,5 @@
 ARG ROS_DISTRO=jazzy
-FROM osrf/ros:$ROS_DISTRO-desktop
+FROM ros:$ROS_DISTRO
 
 SHELL ["/bin/bash", "-c"]
 
